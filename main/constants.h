@@ -7,8 +7,8 @@
 // Convention : PIN_{NAME_COMPONENT}_{IN|OUT}
 //GYRO_PINS
 //char PIN_GYRO_INTERRUPT = 5;
-char PIN_GYRO_SDA       = 23;
-char PIN_GYRO_SCL       = 24;
+//char PIN_GYRO_SDA       = 23;   //DATA
+//char PIN_GYRO_SCL       = 24;   //CLOCK
 
 //MOTOR_PINS
 char PIN_MOTOR_LF_OUT   = 7;
