@@ -1,9 +1,8 @@
-#include <Servo.h>
-#include "constants.h"
+#include <Wire.h>
 
 void setup() {
+  Wire.begin();
 }
 
 void loop() {
- 
 }

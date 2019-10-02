@@ -1,6 +1,6 @@
-#ifndef GYRO_MPU6050
-#define GYRO_MPU6050
-
 #include "lib/MPU6050/MPU6050.h" // Gyroscope library
 
-#endif
+typedef struct Gyro {
+  int16_t ax, ay, az;
+  int16_t gx, gy, gz;
+} Gyro;
