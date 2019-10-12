@@ -1,5 +1,4 @@
-# Projet "KARL"
+# Projet "KARL"
 
-## TODO
+## TODO
 - [ ] define abstract PIN connection in constants.h
-- [ ] 
