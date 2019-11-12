@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   aria-hidden="true"
+   focusable="false"
+   data-prefix="fad"
+   data-icon="drone"
+   role="img"
+   viewBox="0 0 512 512"
+   class="svg-inline--fa fa-drone fa-w-16 fa-3x"
+   version="1.1"
+   id="svg873"
+   sodipodi:docname="drone-logo-5.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="822"
+     inkscape:window-height="480"
+     id="namedview25"
+     showgrid="false"
+     inkscape:zoom="0.4609375"
+     inkscape:cx="234.79261"
+     inkscape:cy="256"
+     inkscape:window-x="88"
+     inkscape:window-y="139"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg873" />
+  <metadata
+     id="metadata879">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs877">
+    <meshgradient
+       gradientTransform="translate(610.73005,-90.24991)"
+       y="89.169952"
+       x="-611.67346"
+       gradientUnits="userSpaceOnUse"
+       id="meshgradient1022">
+      <meshrow
+         id="meshrow1024">
+        <meshpatch
+           id="meshpatch1026">
+          <stop
+             id="stop1028"
+             style="stop-color:#ffffff;stop-opacity:1"
+             path="c 170.972,0  341.944,0  512.916,0" />
+          <stop
+             id="stop1030"
+             style="stop-color:#000000;stop-opacity:1"
+             path="c 0,170.667  0,341.333  0,512" />
+          <stop
+             id="stop1032"
+             style="stop-color:#ffffff;stop-opacity:1"
+             path="c -170.972,0  -341.944,0  -512.916,0" />
+          <stop
+             id="stop1034"
+             style="stop-color:#000000;stop-opacity:1"
+             path="c 0,-170.667  0,-341.333  0,-512" />
+        </meshpatch>
+      </meshrow>
+    </meshgradient>
+    <meshgradient
+       y="79.992775"
+       x="79.992775"
+       gradientUnits="userSpaceOnUse"
+       id="meshgradient4762">
+      <meshrow
+         id="meshrow4764">
+        <meshpatch
+           id="meshpatch4766">
+          <stop
+             id="stop4768"
+             style="stop-color:#ffffff;stop-opacity:1"
+             path="c 117.34,0  234.68,0  352.02,0" />
+          <stop
+             id="stop4770"
+             style="stop-color:#000000;stop-opacity:1"
+             path="c 0,117.338  0,234.677  0,352.015" />
+          <stop
+             id="stop4772"
+             style="stop-color:#ffffff;stop-opacity:1"
+             path="c -117.34,0  -234.68,0  -352.02,0" />
+          <stop
+             id="stop4774"
+             style="stop-color:#000000;stop-opacity:1"
+             path="c 0,-117.338  0,-234.677  0,-352.015" />
+        </meshpatch>
+      </meshrow>
+    </meshgradient>
+  </defs>
+  <g
+     class="fa-group"
+     id="g871">
+    <path
+       style="fill:url(#meshgradient1022);fill-opacity:1"
+       d="M 300.34002,158.92 339.2,130.86 a 64.05,64.05 0 1 1 40.86003,40.86 l -28.06002,38.86 v 1.56 A 111.93,111.93 0 1 0 298.78002,158.92 Z M 211.66,350.92 172,379.56 A 64.06,64.06 0 1 1 131.75,338.39 L 160,299.26 v -1.08 a 111.93,111.93 0 1 0 52.22,52.74 z M 111,-1.079952 A 112,112 0 1 0 160,211.66 v -1.08 L 131.75,171.45 A 64,64 0 1 1 172,130.28001 L 211.66,158.92 h 0.56 A 112,112 0 0 0 111,-1.079952 Z M 400.00002,286.92 a 111.58,111.58 0 0 0 -48.00001,10.78 v 1.56 l 28.06002,38.86 A 64.05,64.05 0 1 1 339.2,378.98 l -38.85998,-28.06 h -1.56 a 112,112 0 1 0 101.22,-64 z"
+       class="fa-secondary"
+       id="path867" />
+    <path
+       style="fill-opacity:1;fill:url(#meshgradient4762)"
+       fill="currentColor"
+       d="M432 399.19a31.91 31.91 0 1 1-63.8 1.81l-67.86-49h-88.68l-67.86 49a31.91 31.91 0 1 1-32.8-32.8l49-67.86v-88.68l-49-67.86a31.91 31.91 0 1 1 32.8-32.8l67.86 49h88.68l67.86-49a31.91 31.91 0 1 1 32.8 32.8l-49 67.86v88.68l49 67.86a31.9 31.9 0 0 1 31 30.99z"
+       class="fa-primary"
+       id="path869" />
+    <path
+       id="path1057"
+       d="M -82.699182,265.62535 -119.74152,290.6074"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="185.33554"
+     y="319.04794"
+     id="text883"><tspan
+       id="tspan881"
+       x="185.33554"
+       y="319.04794"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:192px;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu Bold';fill:#ffffff">K</tspan></text>
+</svg>
