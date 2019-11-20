@@ -60,12 +60,13 @@
     //#define MINTHROTTLE 1120 // for Super Simple ESCs 10A
     //#define MINTHROTTLE 1064 // special ESC (simonk)
     //#define MINTHROTTLE 1050 // for brushed ESCs like ladybird
-    #define MINTHROTTLE 1150 // (*) (**)
-
+    //#define MINTHROTTLE 1150 // (*) (**)
+    #define MINTHROTTLE 1001
   /****************************    Motor maxthrottle    *******************************/
     /* this is the maximum value for the ESCs at full power, this value can be increased up to 2000 */
-    #define MAXTHROTTLE 1850
-
+    //#define MAXTHROTTLE 1850
+    #define MAXTHROTTLE 1250
+    
   /****************************    Mincommand          *******************************/
     /* this is the value for the ESCs when they are not armed
        in some cases, this value must be lowered down to 900 for some specific ESCs, otherwise they failed to initiate */
@@ -203,7 +204,9 @@
 
       /* enforce your individual sensor orientation - even overrides board specific defaults */
       //#define FORCE_ACC_ORIENTATION(X, Y, Z)  {imu.accADC[ROLL]  =  Y; imu.accADC[PITCH]  = -X; imu.accADC[YAW]  = Z;}
-      //#define FORCE_GYRO_ORIENTATION(X, Y, Z) {imu.gyroADC[ROLL] = -Y; imu.gyroADC[PITCH] =  X; imu.gyroADC[YAW] = Z;}
+      //#define FORCE_GYRO_ORIENTATION(X, Y, Z) {imu.gyroADC[ROLL] = Y; imu.gyroADC[PITCH] =  -X; imu.gyroADC[YAW] = Z;}
+      #define FORCE_GYRO_ORIENTATION(X, Y, Z) {imu.gyroADC[ROLL] = -Y; imu.gyroADC[PITCH] = Z; imu.gyroADC[YAW] = -X;}
+
       //#define FORCE_MAG_ORIENTATION(X, Y, Z)  {imu.magADC[ROLL]  =  X; imu.magADC[PITCH]  =  Y; imu.magADC[YAW]  = Z;}
 
       /* Board orientation shift */
@@ -577,7 +580,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
 
   /************************        continuous gyro calibration        ********************/
   /* Gyrocalibration will be repeated if copter is moving during calibration. */
-    //#define GYROCALIBRATIONFAILSAFE
+    #define GYROCALIBRATIONFAILSAFE
 
   /************************        AP FlightMode        **********************************/
   /*** FUNCTIONALITY TEMPORARY REMOVED ***/
