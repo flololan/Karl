@@ -1,2 +1,4 @@
 
 .DS_Store
+# Port conf
+SerialPort.txt
