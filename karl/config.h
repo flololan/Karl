@@ -66,7 +66,7 @@
   /****************************    Motor maxthrottle    *******************************/
     /* this is the maximum value for the ESCs at full power, this value can be increased up to 2000 */
     //#define MAXTHROTTLE 1850
-    #define MAXTHROTTLE 1500
+    #define MAXTHROTTLE 2000
     
   /****************************    Mincommand          *******************************/
     /* this is the value for the ESCs when they are not armed
@@ -206,9 +206,8 @@
       /* enforce your individual sensor orientation - even overrides board specific defaults */
       //#define FORCE_ACC_ORIENTATION(X, Y, Z)  {imu.accADC[ROLL]  =  Y; imu.accADC[PITCH]  = -X; imu.accADC[YAW]  = Z;}
       //#define FORCE_GYRO_ORIENTATION(X, Y, Z) {imu.gyroADC[ROLL] = Y; imu.gyroADC[PITCH] =  -X; imu.gyroADC[YAW] = Z;}
-      #define FORCE_GYRO_ORIENTATION(X, Y, Z) {imu.gyroADC[ROLL] = -Y; imu.gyroADC[PITCH] = Z; imu.gyroADC[YAW] = -X;}
-
-      //#define FORCE_MAG_ORIENTATION(X, Y, Z)  {imu.magADC[ROLL]  =  X; imu.magADC[PITCH]  =  Y; imu.magADC[YAW]  = Z;}
+      //#define FORCE_GYRO_ORIENTATION(X, Y, Z) {imu.gyroADC[ROLL] = Y; imu.gyroADC[PITCH] = Z; imu.gyroADC[YAW] = X;} // X changed
+      #define FORCE_GYRO_ORIENTATION(X, Y, Z) {imu.gyroADC[ROLL] = -Y; imu.gyroADC[PITCH] = -Z; imu.gyroADC[YAW] = -X;}
 
       /* Board orientation shift */
       /* If you have frame designed only for + mode and you cannot rotate FC phisycally for flying in X mode (or vice versa)
@@ -1033,7 +1032,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
   /********************************************************************/
   /*                   !!! No Fly Mode !!!                            */ 
 
-    #define DYNBALANCE   // (**) Dynamic balancing controlled from Gui
+    //#define DYNBALANCE   // (**) Dynamic balancing controlled from Gui
 
   /********************************************************************/
   /****           Regression testing                               ****/
