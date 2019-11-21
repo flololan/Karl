@@ -61,11 +61,12 @@
     //#define MINTHROTTLE 1064 // special ESC (simonk)
     //#define MINTHROTTLE 1050 // for brushed ESCs like ladybird
     //#define MINTHROTTLE 1150 // (*) (**)
-    #define MINTHROTTLE 1001
+    #define MINTHROTTLE 1033
+    
   /****************************    Motor maxthrottle    *******************************/
     /* this is the maximum value for the ESCs at full power, this value can be increased up to 2000 */
     //#define MAXTHROTTLE 1850
-    #define MAXTHROTTLE 1250
+    #define MAXTHROTTLE 1500
     
   /****************************    Mincommand          *******************************/
     /* this is the value for the ESCs when they are not armed
@@ -604,50 +605,9 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
     #define FAILSAFE_DELAY     10                     // Guard time for failsafe activation after signal lost. 1 step = 0.1sec - 1sec in example
     #define FAILSAFE_OFF_DELAY 200                    // Time for Landing before motors stop in 0.1sec. 1 step = 0.1sec - 20sec in example
     // TODO: Adjust this value
-    #define FAILSAFE_THROTTLE  (MINTHROTTLE + 200)    // (*) Throttle level used for landing - may be relative to MINTHROTTLE - as in this case
+    #define FAILSAFE_THROTTLE 0    // (*) Throttle level used for landing - may be relative to MINTHROTTLE - as in this case
     
     #define FAILSAFE_DETECT_TRESHOLD  985
-
-
-  /*****************                DFRobot LED RING    *********************************/
-    /* I2C DFRobot LED RING communication */
-    //#define LED_RING
-
-  /********************************    LED FLASHER    ***********************************/
-    //#define LED_FLASHER
-    //#define LED_FLASHER_DDR DDRB
-    //#define LED_FLASHER_PORT PORTB
-    //#define LED_FLASHER_BIT PORTB4
-    //#define LED_FLASHER_INVERT
-    //#define LED_FLASHER_SEQUENCE        0b00000000      // leds OFF
-    //#define LED_FLASHER_SEQUENCE_ARMED  0b00000101      // create double flashes
-    //#define LED_FLASHER_SEQUENCE_MAX    0b11111111      // full illumination
-    //#define LED_FLASHER_SEQUENCE_LOW    0b00000000      // no illumination
-
-
-  /*******************************    Landing lights    *********************************/
-  /* Landing lights
-     Use an output pin to control landing lights.
-     They can be switched automatically when used in conjunction
-     with altitude data from a sonar unit. */
-    //#define LANDING_LIGHTS_DDR DDRC
-    //#define LANDING_LIGHTS_PORT PORTC
-    //#define LANDING_LIGHTS_BIT PORTC0
-    //#define LANDING_LIGHTS_INVERT
-
-    /* altitude above ground (in cm) as reported by sonar */
-    //#define LANDING_LIGHTS_AUTO_ALTITUDE 50
-
-    /* adopt the flasher pattern for landing light LEDs */
-    //#define LANDING_LIGHTS_ADOPT_LED_FLASHER_PATTERN
-
-  /*************************    INFLIGHT ACC Calibration    *****************************/
-    /* This will activate the ACC-Inflight calibration if unchecked */
-    //#define INFLIGHT_ACC_CALIBRATION
-
-  /*******************************    OSD Switch    *************************************/
-    // This adds a box that can be interpreted by OSD in activation status (to switch on/off the overlay for instance)
-  //#define OSD_SWITCH
 
   /**************************************************************************************/
   /***********************                  TX-related         **************************/
@@ -656,127 +616,6 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
     /* introduce a deadband around the stick center
        Must be greater than zero, comment if you dont want a deadband on roll, pitch and yaw */
     //#define DEADBAND 6
-
-  /**************************************************************************************/
-  /***********************                  GPS                **************************/
-  /**************************************************************************************/
-
-    /* ENable this for using GPS simulator (NMEA only)*/
-    //#define GPS_SIMULATOR
-
-    /* GPS using a SERIAL port
-       if enabled, define here the Arduino Serial port number and the UART speed
-       note: only the RX PIN is used in case of NMEA mode, the GPS is not configured by multiwii
-       in NMEA mode the GPS must be configured to output GGA and RMC NMEA sentences (which is generally the default conf for most GPS devices)
-       at least 5Hz update rate. uncomment the first line to select the GPS serial port of the arduino */
-       
-    //#define GPS_SERIAL 2         // should be 2 for flyduino v2. It's the serial port number on arduino MEGA
-                                   // must be 0 for PRO_MINI (ex GPS_PRO_MINI)
-                                   // note: Now a GPS can share MSP on the same port. The only constrain is to not use it simultaneously, and use the same port speed.
-
-    // avoid using 115200 baud because with 16MHz arduino the 115200 baudrate have more than 2% speed error (57600 have 0.8% error)
-    #define GPS_BAUD   57600       // GPS_BAUD will override SERIALx_COM_SPEED for the selected port
-
-   /* GPS protocol 
-       NMEA  - Standard NMEA protocol GGA, GSA and RMC  sentences are needed
-       UBLOX - U-Blox binary protocol, use the ublox config file (u-blox-config.ublox.txt) from the source tree 
-       MTK_BINARY16 and MTK_BINARY19 - MTK3329 chipset based GPS with DIYDrones binary firmware (v1.6 or v1.9)
-       With UBLOX and MTK_BINARY you don't have to use GPS_FILTERING in multiwii code !!! */
-
-    
-    //#define NMEA
-    //#define UBLOX
-    //#define MTK_BINARY16
-    //#define MTK_BINARY19
-    //#define INIT_MTK_GPS        // initialize MTK GPS for using selected speed, 5Hz update rate and GGA & RMC sentence or binary settings
-    //#define VENUS8
-
-    /* I2C GPS device made with an independant arduino + GPS device
-       including some navigation functions
-       contribution from EOSBandi   http://code.google.com/p/i2c-gps-nav/ 
-       You have to use at least I2CGpsNav code r33 */
-    /* all functionnalities allowed by SERIAL_GPS are now available for I2C_GPS: all relevant navigation computations are gathered in the main FC */
-
-    //#define I2C_GPS
-
-    // If your I2C GPS board has Sonar support enabled
-    //#define I2C_GPS_SONAR
-
-    /* indicate a valid GPS fix with at least 5 satellites by flashing the LED  - Modified by MIS - Using stable LED (YELLOW on CRIUS AIO) led work as sat number indicator 
-      - No GPS FIX -> LED blink at speed of incoming GPS frames
-      - Fix and sat no. bellow 5 -> LED off
-      - Fix and sat no. >= 5 -> LED blinks, one blink for 5 sat, two blinks for 6 sat, three for 7 ... */
-    #define GPS_LED_INDICATOR
-
-   //Enables the MSP_WP command set , which is used by WinGUI for displaying an setting up navigation
-   //#define USE_MSP_WP
-
-   // HOME position is reset at every arm, uncomment it to prohibit it (you can set home position with GyroCalibration)    
-   //#define DONT_RESET_HOME_AT_ARM
-
-/* GPS navigation can control the heading */
-
-// copter faces toward the navigation point, maghold must be enabled for it
-#define NAV_CONTROLS_HEADING       1    //(**)
-// true - copter comes in with tail first
-#define NAV_TAIL_FIRST             0    //(**)
-// true - when copter arrives to home position it rotates it's head to takeoff direction
-#define NAV_SET_TAKEOFF_HEADING    1    //(**)
-
-/* Get your magnetic declination from here : http://magnetic-declination.com/
-Convert the degree+minutes into decimal degree by ==> degree+minutes*(1/60)
-Note the sign on declination it could be negative or positive (WEST or EAST)
-Also note, that maqgnetic declination changes with time, so recheck your value every 3-6 months */
-#define MAG_DECLINATION  4.02f   //(**)
-
-// Adds a forward predictive filterig to compensate gps lag. Code based on Jason Short's lead filter implementation
-#define GPS_LEAD_FILTER               //(**)
-
-// add a 5 element moving average filter to GPS coordinates, helps eliminate gps noise but adds latency comment out to disable
-// use it with NMEA gps only 
-//#define GPS_FILTERING                 //(**)
-
-// if we are within this distance to a waypoint then we consider it reached (distance is in cm)
-#define GPS_WP_RADIUS              100      //(**)
-
-// Safe WP distance, do not start mission if the first wp distance is larger than this number (in meters)
-// Also aborts mission if the next waypoint distance is more than this number
-#define SAFE_WP_DISTANCE           500      //(**)
-
-//Maximu allowable navigation altitude (in meters) automatic altitude control will not go above this height
-#define MAX_NAV_ALTITUDE           100     //(**)
-
-// minimum speed when approach waypoint
-#define NAV_SPEED_MIN              100    // cm/sec //(**)
-// maximum speed to reach between waypoints
-#define NAV_SPEED_MAX              400    // cm/sec //(**)
-// Slow down to zero when reaching waypoint (same as NAV_SPEED_MIN = 0)
-#define NAV_SLOW_NAV               0      //(**)
-// Weight factor of the crosstrack error in navigation calculations (do not touch)
-#define CROSSTRACK_GAIN            .4     //(**)
-// Maximum allowable banking than navigation outputs
-#define NAV_BANK_MAX 3000                 //(**)
-
-//Defines the RTH altitude. 0 means keep current alt during RTH (in meters)
-#define RTH_ALTITUDE               15        //(**)
-//Wait to reach RTH alt before start moving to home (0-no, 1-yes)
-#define WAIT_FOR_RTH_ALT           1         //(**)
-
-//Navigation engine will takeover BARO mode control
-#define NAV_TAKEOVER_BARO          1         //(**)
-
-//Throttle stick input will be ignored  (only in BARO)
-#define IGNORE_THROTTLE            1         //(**)
-
-//If FENCE DISTANCE is larger than 0 then copter will switch to RTH when it farther from home
-//than the defined number in meters
-#define FENCE_DISTANCE      600
-
-//This governs the descent speed during landing. 100 is equals approc 50cm/sec
-#define LAND_SPEED          100
-
-
-    //#define ONLY_ALLOW_ARM_WITH_GPS_3DFIX      // Only allow FC arming if GPS has a 3D fix.
 
   /**************************************************************************************/
   /***********************        LCD/OLED - display settings       *********************/
@@ -798,7 +637,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
       //#define OLED_DIGOLE     // I2C OLED from http://www.digole.com/index.php?productID=550
 
     /******************************   Display settings   ***********************************/
-      #define LCD_SERIAL_PORT 0    // must be 0 on Pro Mini and single serial boards; Set to your choice on any Mega based board
+      //#define LCD_SERIAL_PORT 0    // must be 0 on Pro Mini and single serial boards; Set to your choice on any Mega based board
 
       //#define SUPPRESS_OLED_I2C_128x64LOGO  // suppress display of OLED logo to save memory
 
@@ -817,13 +656,13 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
       //#define DISPLAY_COLUMNS 16
     /********************************    Navigation     ***********************************/
     /* keys to navigate the LCD menu */
-      #define LCD_MENU_PREV 'p'
-      #define LCD_MENU_NEXT 'n'
-      #define LCD_VALUE_UP 'u'
-      #define LCD_VALUE_DOWN 'd'
+      //#define LCD_MENU_PREV 'p'
+      //#define LCD_MENU_NEXT 'n'
+      //#define LCD_VALUE_UP 'u'
+      //#define LCD_VALUE_DOWN 'd'
 
-      #define LCD_MENU_SAVE_EXIT 's'
-      #define LCD_MENU_ABORT 'x'
+      //#define LCD_MENU_SAVE_EXIT 's'
+      //#define LCD_MENU_ABORT 'x'
 
   /**************************************************************************************/
   /***********************      LCD configuration menu         **************************/
@@ -1194,7 +1033,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
   /********************************************************************/
   /*                   !!! No Fly Mode !!!                            */ 
 
-    //#define DYNBALANCE   // (**) Dynamic balancing controlled from Gui
+    #define DYNBALANCE   // (**) Dynamic balancing controlled from Gui
 
   /********************************************************************/
   /****           Regression testing                               ****/
