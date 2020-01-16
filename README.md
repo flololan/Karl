@@ -1,4 +1,3 @@
 # Projet "KARL"
 
-## TODO
-- [ ] define abstract PIN connection in constants.h
+Code used to make the drone fly (in `karl/`). Compile with the Arduino IDE.
